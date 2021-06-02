@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.moschip.spacexfan.viewmodel.fragment.UpcomingLaunchDetailsViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".view.fragment.UpcomingLaunchDetailsFragment">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:foreground="?selectableItemBackgroundBorderless"
+            app:cardBackgroundColor="@color/black_light"
+            app:cardCornerRadius="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/launchDetailsTitleView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="@{viewModel.launchMutableLiveData.name}"
+                    android:textColor="@color/icon_color"
+                    android:textSize="@dimen/_14ssp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Falcon 9" />
+
+                <TextView
+                    android:id="@+id/launchDetailsDateView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:text="@{viewModel.launchMutableLiveData.convertedDate}"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/launchDetailsTitleView"
+                    tools:text="Trailblazer" />
+
+                <TextView
+                    android:id="@+id/launchDetailsFlightView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="@{`Flight No `+viewModel.launchMutableLiveData.flightNumber}"
+                    android:textColor="@color/white_light"
+                    android:textSize="@dimen/_10ssp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/launchDetailsDateView"
+                    tools:text="Trailblazer" />
+
+                <TextView
+                    android:id="@+id/launchDetailsDescView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:lineSpacingExtra="1dp"
+                    android:lineSpacingMultiplier="1.2"
+                    android:text="@{viewModel.launchMutableLiveData.details}"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/white_light"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/launchDetailsFlightView"
+                    tools:text="Flight no : 1223456789" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?selectableItemBackgroundBorderless"
+            app:cardBackgroundColor="@color/black_light"
+            app:cardCornerRadius="@dimen/_10sdp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/specsView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:text="@string/cores"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14ssp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/rocketStagesName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="@string/core"
+                    android:textColor="@color/white"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/rocketStagesView"
+                    app:layout_constraintEnd_toStartOf="@id/rocketStagesView"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/rocketStagesView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="@{viewModel.launchMutableLiveData.cores[0].core}"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/white_light"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/rocketStagesName"
+                    app:layout_constraintTop_toBottomOf="@id/specsView"
+                    tools:text="June 4,2020" />
+
+                <TextView
+                    android:id="@+id/heightName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="@string/gridfins"
+                    android:textColor="@color/white"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/heightView"
+                    app:layout_constraintEnd_toStartOf="@id/heightView"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/heightView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:text="@{viewModel.launchMutableLiveData.cores[0].gridfins==null ? `Unknown` : `Yes`}"
+                    android:textAlignment="textEnd"
+                    android:textColor="@{viewModel.launchMutableLiveData.cores[0].gridfins==null ? @color/white_light:@color/green}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/heightName"
+                    app:layout_constraintTop_toBottomOf="@id/rocketStagesView"
+                    tools:text="$200000" />
+
+                <TextView
+                    android:id="@+id/diameterName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="@string/landingLegs"
+                    android:textColor="@color/white"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/diameterView"
+                    app:layout_constraintEnd_toStartOf="@id/diameterView"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/diameterView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:text="@{viewModel.launchMutableLiveData.cores[0].legs==null ? `Unknown` : `Yes`}"
+                    android:textAlignment="textEnd"
+                    android:textColor="@{viewModel.launchMutableLiveData.cores[0].legs==null ? @color/white_light:@color/green}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/diameterName"
+                    app:layout_constraintTop_toBottomOf="@id/heightView"
+                    tools:text="yes" />
+
+                <TextView
+                    android:id="@+id/weightName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="@string/landingAttempt"
+                    android:textColor="@color/white"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/weightView"
+                    app:layout_constraintEnd_toStartOf="@id/weightView"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/weightView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:text="@{viewModel.launchMutableLiveData.cores[0].landingAttempt==null ? `Unknown` : `Yes`}"
+                    android:textAlignment="textEnd"
+                    android:textColor="@{viewModel.launchMutableLiveData.cores[0].landingAttempt==null ? @color/white_light:@color/green}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/weightName"
+                    app:layout_constraintTop_toBottomOf="@id/diameterView"
+                    tools:text="yes" />
+
+                <TextView
+                    android:id="@+id/fairHeightName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="@string/reUsed"
+                    android:textColor="@color/white"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/fairHeightView"
+                    app:layout_constraintEnd_toStartOf="@id/fairHeightView"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/fairHeightView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:text="@{viewModel.launchMutableLiveData.cores[0].reused==null ? `Unknown` : `Yes`}"
+                    android:textAlignment="textEnd"
+                    android:textColor="@{viewModel.launchMutableLiveData.cores[0].reused==null ? @color/white_light:@color/green}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/fairHeightName"
+                    app:layout_constraintTop_toBottomOf="@id/weightView"
+                    tools:text="yes" />
+
+                <TextView
+                    android:id="@+id/fairDiameterName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="@string/landingType"
+                    android:textColor="@color/white"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/fairDiameterView"
+                    app:layout_constraintEnd_toStartOf="@id/fairDiameterView"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/fairDiameterView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_15sdp"
+                    android:text="@{viewModel.launchMutableLiveData.cores[0].landingType==null ? `Unknown` : `Yes`}"
+                    android:textAlignment="textEnd"
+                    android:textColor="@{viewModel.launchMutableLiveData.cores[0].landingType==null ? @color/white_light:@color/green}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/fairDiameterName"
+                    app:layout_constraintTop_toBottomOf="@id/fairHeightView"
+                    tools:text="yes" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</layout>

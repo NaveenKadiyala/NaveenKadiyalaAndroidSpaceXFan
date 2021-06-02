@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">SpaceX Fan</string>
+    <string name="favorites">Favorites</string>
+    <string name="rockets">Rockets</string>
+    <string name="launches">Launches</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="no_favorites_yet">No favorites yet</string>
+    <string name="description">Description</string>
+    <string name="maiden_launch">Maiden launch</string>
+    <string name="launch_cost">Launch cost</string>
+    <string name="active">Active</string>
+    <string name="specifications">Specifications</string>
+    <string name="stages">Rocket stages</string>
+    <string name="height">Height</string>
+    <string name="diameter">Diameter</string>
+    <string name="weight">Weight</string>
+    <string name="fairingHeight">Fairing height</string>
+    <string name="fairingDiamter">Fairing Diameter</string>
+    <string name="engines">Engines</string>
+    <string name="model">Model</string>
+    <string name="thrustToWeight">Thrust to weight</string>
+    <string name="fuel">Fuel</string>
+    <string name="oxidizer">Oxidizer</string>
+    <string name="seaLevelThrust">Sea level thrust</string>
+    <string name="vacuumThrust">Vacuum thrust</string>
+    <string name="seaLevelIsp">Sea level Isp</string>
+    <string name="vacuumIsp">Vacuum Isp</string>
+    <string name="cores">cores</string>
+    <string name="core">Core</string>
+    <string name="gridfins">Gridfins</string>
+    <string name="landingLegs">Landing Legs</string>
+    <string name="landingAttempt">Landing Attempt</string>
+    <string name="reUsed">Reused</string>
+    <string name="landingType">Landing Type</string>
+    <string name="splash_image">This is the logo the application</string>
+</resources>

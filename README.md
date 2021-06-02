@@ -1,7 +1,7 @@
 # SpaceXFan
 This project was all about the spaceX rockets and their upcoming launches.
 
-# Project planning:
+# Project planning
 Divided the project into two parts
 * Rockets - list and details
 * Upcoming launches - list and details

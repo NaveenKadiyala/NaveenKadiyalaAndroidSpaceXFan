@@ -10,7 +10,7 @@ Divided the project into two parts
 Android studio, Kotlin, XML, SpaceX Api
 
 # Android tools used
-MVVM, ViewModel, LiveData, Databinding, ViewBinding, RXAndroid, Biomteric Verification, Fragments, Viewpager2, RecyclerView, Constraint layout, Firebase crashlytics and custom events
+MVVM, ViewModel, LiveData, Databinding, ViewBinding, RXAndroid, Biomteric Verification, Fragments, Viewpager2, RecyclerView, Constraint layout,Coordinator layout, collapsing toolbar,Firebase crashlytics and custom events
 
 # App Flow explanation
 * Opens with splash screen with a zoomIn animation.

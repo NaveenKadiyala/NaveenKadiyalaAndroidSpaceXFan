@@ -29,4 +29,10 @@ interface AppConstants {
     enum class ObserverEvents {
         OPEN_MAIN_SCREEN
     }
+
+    object FirebaseEventConstants{
+        const val ROCKET_DETAILS_EVENT = "rocketDetailsOpened"
+        const val UPCOMING_DETAILS_EVENT = "upcomingLaunchDetailsOpened"
+        const val ROCKET_NAME = "rocketName"
+    }
 }

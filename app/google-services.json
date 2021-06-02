@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "582384074569",
+    "project_id": "spacexfan-436d2",
+    "storage_bucket": "spacexfan-436d2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:582384074569:android:e546dea359dc531ba52498",
+        "android_client_info": {
+          "package_name": "com.moschip.spacexfan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "582384074569-tpmerni6r0ks2oq66b1jcg5mr4qi1eah.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.moschip.spacexfan",
+            "certificate_hash": "c1e3e071298aa627afb8c9ea5186ba314193d8dc"
+          }
+        },
+        {
+          "client_id": "582384074569-ugqf75jik57th6avu8iad33e0k09smvr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9VWa8vtcRnaHJG39IQvH-MmI_I4LhaqQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "582384074569-ugqf75jik57th6avu8iad33e0k09smvr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

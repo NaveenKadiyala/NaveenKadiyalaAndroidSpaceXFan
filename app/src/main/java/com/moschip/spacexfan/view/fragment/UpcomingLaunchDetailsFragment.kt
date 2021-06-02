@@ -6,6 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.analytics.ktx.analytics
+import com.google.firebase.analytics.ktx.logEvent
+import com.google.firebase.ktx.Firebase
 import com.moschip.services.model.UpcomingLaunch
 import com.moschip.spacexfan.databinding.FragmentUpcomingLaunchDetailsBinding
 import com.moschip.spacexfan.helper.AppConstants
@@ -45,6 +49,7 @@ class UpcomingLaunchDetailsFragment : Fragment() {
             }
     }
 
+    private lateinit var firebaseAnalytics: FirebaseAnalytics
     private lateinit var binding: FragmentUpcomingLaunchDetailsBinding
     private var upcomingLaunch: UpcomingLaunch? = null
 
@@ -53,5 +58,14 @@ class UpcomingLaunchDetailsFragment : Fragment() {
 
         binding.viewModel?.launchMutableLiveData?.postValue(upcomingLaunch)
 
+        logFirebaseEvent()
+
+    }
+
+    private fun logFirebaseEvent() {
+        firebaseAnalytics = Firebase.analytics
+        firebaseAnalytics.logEvent(AppConstants.FirebaseEventConstants.UPCOMING_DETAILS_EVENT) {
+            param(AppConstants.FirebaseEventConstants.ROCKET_NAME, upcomingLaunch?.name!!)
+        }
     }
 }

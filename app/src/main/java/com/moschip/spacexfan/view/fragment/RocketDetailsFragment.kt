@@ -8,6 +8,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.analytics.ktx.analytics
+import com.google.firebase.analytics.ktx.logEvent
+import com.google.firebase.ktx.Firebase
 import com.moschip.services.model.Rocket
 import com.moschip.spacexfan.R
 import com.moschip.spacexfan.adapter.ViewPagerAdapter
@@ -56,6 +60,8 @@ class RocketDetailsFragment : Fragment() {
     private var handler: Handler? = null
     private var runnable: Runnable? = null
     private lateinit var favoriteMenuIcon: MenuItem
+    private lateinit var firebaseAnalytics: FirebaseAnalytics
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -66,6 +72,15 @@ class RocketDetailsFragment : Fragment() {
 
         bindViewPager()
 
+        logFirebaseEvent()
+
+    }
+
+    private fun logFirebaseEvent() {
+        firebaseAnalytics = Firebase.analytics
+        firebaseAnalytics.logEvent(AppConstants.FirebaseEventConstants.ROCKET_DETAILS_EVENT) {
+            param(AppConstants.FirebaseEventConstants.ROCKET_NAME, rocket?.name!!)
+        }
     }
 
     private fun bindActionBar() {

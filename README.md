@@ -20,3 +20,4 @@ MVVM, ViewModel, LiveData, Databinding, ViewBinding, RXAndroid, Biomteric Verifi
 * In rocket details, we are displaying the respective rocket details and added favorite button to add/remove from favorites list.
 * Added custom firebase event in rocket details and upcoming launch details.
 * Centralized the favorite state from rocket details, favorites list and rockets list, so when ever u change the state it will be reflected in other respective places also.
+* Created services library where we will connect with spaceX api and return data to the app module.
